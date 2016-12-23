@@ -17,7 +17,7 @@ Various packaging tools and scripts for LXQt applications.
 %prep
 %setup -q
 
-%cmake_qt5
+%cmake_qt5 -DLXQT_ETC_XDG_DIR="%{_sysconfdir}/xdg/qt5"
 
 %build
 %make -C build
@@ -27,4 +27,4 @@ Various packaging tools and scripts for LXQt applications.
 
 %files
 %doc README.md
-
+%{_datadir}/cmake/lxqt-build-tools
