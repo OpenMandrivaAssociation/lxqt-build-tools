@@ -7,6 +7,7 @@ Group:		System/Libraries
 Url:		http://lxqt.org/
 Source0:	https://github.com/lxde/lxqt-build-tools/releases/download/%{version}/%{name}-%{version}.tar.xz
 BuildRequires:	cmake
+BuildRequires:	qmake5
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	git-core
 
