@@ -14,6 +14,7 @@ BuildRequires:	cmake
 BuildRequires:	qmake5
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	git-core
+BuildRequires:	pkgconfig(glib-2.0)
 
 %description
 Various packaging tools and scripts for LXQt applications.
