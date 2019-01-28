@@ -3,8 +3,8 @@
 
 Summary:	Various packaging tools and scripts for LXQt applications
 Name:		lxqt-build-tools
-Version:	0.5.0
-Release:	4
+Version:	0.6.0
+Release:	1
 License:	BSD
 Group:		System/Libraries
 Url:		http://lxqt.org/
@@ -42,4 +42,5 @@ export LC_ALL=en_US.utf-8
 
 %files
 %doc README.md
+%{_bindir}/lxqt-transupdate
 %{_datadir}/cmake/lxqt-build-tools
