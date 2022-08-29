@@ -4,11 +4,11 @@
 Summary:	Various packaging tools and scripts for LXQt applications
 Name:		lxqt-build-tools
 Version:	0.11.0
-Release:	1
+Release:	2
 License:	BSD
 Group:		System/Libraries
 Url:		http://lxqt.org/
-Source0:	https://github.com/lxde/lxqt-build-tools/releases/download/%{version}/%{name}-%{version}.tar.xz
+Source0:	https://github.com/lxqt/lxqt-build-tools/releases/download/%{version}/%{name}-%{version}.tar.xz
 BuildRequires:	ninja
 BuildRequires:	cmake
 BuildRequires:	qmake5
@@ -20,7 +20,7 @@ BuildRequires:	pkgconfig(glib-2.0)
 Various packaging tools and scripts for LXQt applications.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %cmake_qt5 -DLXQT_ETC_XDG_DIR="%{_sysconfdir}/xdg" -G Ninja
 
