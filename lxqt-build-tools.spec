@@ -4,7 +4,7 @@
 Summary:	Various packaging tools and scripts for LXQt applications
 Name:		lxqt-build-tools
 Version:	0.12.0
-Release:	1
+Release:	2
 License:	BSD
 Group:		System/Libraries
 Url:		http://lxqt.org/
