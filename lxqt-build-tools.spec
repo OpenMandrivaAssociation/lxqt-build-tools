@@ -1,9 +1,8 @@
-%define _enable_debug_packages %{nil}
-%define debug_package %{nil}
+%undefine _debugsource_packages
 
 Summary:	Various packaging tools and scripts for LXQt applications
 Name:		lxqt-build-tools
-Version:	0.13.0
+Version:	2.0.0
 Release:	1
 License:	BSD
 Group:		System/Libraries
@@ -11,8 +10,7 @@ Url:		http://lxqt.org/
 Source0:	https://github.com/lxqt/lxqt-build-tools/releases/download/%{version}/%{name}-%{version}.tar.xz
 BuildRequires:	ninja
 BuildRequires:	cmake
-BuildRequires:	qmake5
-BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt6Core)
 BuildRequires:	git-core
 BuildRequires:	pkgconfig(glib-2.0)
 
@@ -22,7 +20,7 @@ Various packaging tools and scripts for LXQt applications.
 %prep
 %autosetup -p1
 
-%cmake_qt5 -DLXQT_ETC_XDG_DIR="%{_sysconfdir}/xdg" -G Ninja
+%cmake -DLXQT_ETC_XDG_DIR="%{_sysconfdir}/xdg" -G Ninja
 
 %build
 # Need to be in a UTF-8 locale so grep (used by the desktop file
@@ -42,5 +40,5 @@ export LC_ALL=en_US.utf-8
 
 %files
 %doc README.md
-%{_bindir}/lxqt-transupdate
-%{_datadir}/cmake/lxqt-build-tools
+%{_bindir}/lxqt2-transupdate
+%{_datadir}/cmake/lxqt2-build-tools
