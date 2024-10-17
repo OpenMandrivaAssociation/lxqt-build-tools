@@ -6,7 +6,7 @@ Version:	2.0.0
 Release:	1
 License:	BSD
 Group:		System/Libraries
-Url:		http://lxqt.org/
+Url:		https://lxqt.org/
 Source0:	https://github.com/lxqt/lxqt-build-tools/releases/download/%{version}/%{name}-%{version}.tar.xz
 BuildRequires:	ninja
 BuildRequires:	cmake
