@@ -2,7 +2,7 @@
 
 Summary:	Various packaging tools and scripts for LXQt applications
 Name:		lxqt-build-tools
-Version:	2.2.0
+Version:	2.2.1
 Release:	1
 License:	BSD
 Group:		System/Libraries
