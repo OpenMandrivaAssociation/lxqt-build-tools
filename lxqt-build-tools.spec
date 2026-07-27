@@ -3,13 +3,13 @@
 Summary:	Various packaging tools and scripts for LXQt applications
 Name:		lxqt-build-tools
 Version:	2.4.0
-Release:	1
+Release:	2
 License:	BSD
 Group:		System/Libraries
 Url:		https://lxqt.org/
 Source0:	https://github.com/lxqt/lxqt-build-tools/releases/download/%{version}/%{name}-%{version}.tar.xz
-BuildRequires:	ninja
-BuildRequires:	cmake
+BuildSystem:	cmake
+BuildOption:	-DLXQT_ETC_XDG_DIR="%{_sysconfdir}/xdg"
 BuildRequires:	cmake(Qt6Core)
 BuildRequires:	git-core
 BuildRequires:	pkgconfig(glib-2.0)
@@ -17,25 +17,13 @@ BuildRequires:	pkgconfig(glib-2.0)
 %description
 Various packaging tools and scripts for LXQt applications.
 
-%prep
-%autosetup -p1
-
-%build
-%cmake -DLXQT_ETC_XDG_DIR="%{_sysconfdir}/xdg" -G Ninja
-# Need to be in a UTF-8 locale so grep (used by the desktop file
-# translation generator) doesn't scream about translations containing
-# "binary" (non-ascii) characters
+%build -p
 export LANG=en_US.utf-8
 export LC_ALL=en_US.utf-8
-%ninja_build
 
-%install
-# Need to be in a UTF-8 locale so grep (used by the desktop file
-# translation generator) doesn't scream about translations containing
-# "binary" (non-ascii) characters
+%install -p
 export LANG=en_US.utf-8
 export LC_ALL=en_US.utf-8
-%ninja_install -C build
 
 %files
 %doc README.md
